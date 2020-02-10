@@ -1,0 +1,31 @@
+.board {
+    padding-top: 3em;
+}
+h1 {
+    text-align: center;
+}
+.row div {
+    float: left;
+    height: 100px;
+    width: 100px;
+}
+.row {
+    clear: both;
+    width: 302px;
+    margin: auto 0px;
+}
+.top {
+    border-bottom: 1px black solid;
+}
+.bottom {
+    border-top: 1px green solid;
+}
+.left {
+    border-right: 1px orange solid;
+}
+.right {
+    border-left: 1px blue solid;
+}
+.row div:hover {
+    cursor: pointer;
+}
