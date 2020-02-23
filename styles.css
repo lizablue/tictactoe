@@ -1,31 +1,43 @@
-.board {
-    padding-top: 3em;
+* {
+    font-family: monospace;
 }
-h1 {
+#board {
+    padding-top: 3em;
     text-align: center;
 }
+
+/* all 9 cells */
 .row div {
     float: left;
     height: 100px;
     width: 100px;
+    line-height: 100px;
+    font-size: 75px;
+    cursor: pointer;
 }
+
 .row {
     clear: both;
     width: 302px;
-    margin: auto 0px;
+    margin: 0 auto;
 }
+
 .top {
     border-bottom: 1px black solid;
 }
+
 .bottom {
     border-top: 1px green solid;
 }
+
 .left {
     border-right: 1px orange solid;
 }
+
 .right {
     border-left: 1px blue solid;
 }
+
 .row div:hover {
-    cursor: pointer;
+    background-color: rgb(220, 220, 220, .5);
 }
