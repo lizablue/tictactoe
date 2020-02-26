@@ -7,26 +7,34 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Tic Tac Toe</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
+
 </head>
 
 <body>
     <main id="board">
+        <!-- heading -->
         <h1>❌ Tic Tac Toe ⭕</h1>
+        <h3 id="results"></h3>
+        <!-- board -->
+        <!-- top row -->
         <section class="row">
-            <div class="top left"></div>
-            <div class="top middle"></div>
-            <div class="top right"></div>
+            <div class="top left" id="box"></div>
+            <div class="top middle" id="box"></div>
+            <div class="top right" id="box"></div>
         </section>
+        <!-- middle row -->
         <section class="row">
-            <div class="middle left"></div>
-            <div class="center"></div>
-            <div class="middle right"></div>
+            <div class="middle left" id="box"></div>
+            <div class="center" id="box"></div>
+            <div class="middle right" id="box"></div>
         </section>
+        <!-- bottom row -->
         <section class="row">
-            <div class="bottom left"></div>
-            <div class="bottom middle"></div>
-            <div class="bottom right"></div>
+            <div class="bottom left" id="box"></div>
+            <div class="bottom middle" id="box"></div>
+            <div class="bottom right" id="box"></div>
         </section>
     </main>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="app.js"></script>
 </body>
