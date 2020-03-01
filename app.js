@@ -1,5 +1,5 @@
 let cells = document.querySelectorAll('.row > div'); // select all the cells
-let results = document.querySelector('#result');
+let results = document.querySelector('#result'); // select element to display results
 
 // listen for click
 for (let i = 0; i < cells.length; i++) {
@@ -10,15 +10,15 @@ let turn = "X"
 
 // document game play
 function cellClicked() {
-    if(results.textContent.length > 0) {
+    if (results.textContent.length > 0) {
         location.reload(false);
         return;
     }
-    
+
     // prevent cheating
     if (event.target.textContent !== "") {
         return;
-    } 
+    }
 
     // populate cells
     event.target.textContent = turn;
@@ -40,7 +40,7 @@ function cellClicked() {
         results.textContent = "WINNER: " + turn;
     } else if (checkCombo(2, 4, 6)) {
         results.textContent = "WINNER: " + turn;
-    } else if (gameOver(0, 1, 2, 3, 4, 5, 6, 7, 8)) {
+    } else if (drawGame(0, 1, 2, 3, 4, 5, 6, 7, 8)) {
         results.textContent = "DRAW"
     };
 
@@ -65,7 +65,8 @@ function checkCombo(a, b, c) {
     }
 };
 
-function gameOver(a, b, c, d, e, f, g, h, i) {
+// check for draw
+function drawGame(a, b, c, d, e, f, g, h, i) {
     if (cells[a].textContent !== ""
         && cells[b].textContent !== ""
         && cells[c].textContent !== ""
@@ -73,23 +74,10 @@ function gameOver(a, b, c, d, e, f, g, h, i) {
         && cells[e].textContent !== ""
         && cells[f].textContent !== ""
         && cells[g].textContent !== ""
+        && cells[h].textContent !== ""
         && cells[i].textCOntent !== "") {
-            return true;
-        } else {
-            return false;
-        }
+        return true;
+    } else {
+        return false;
+    }
 };
-// function resetGame() {
-//     turn = "X";
-//     results.textContent = "";
-//     for (let i = 0; i < cells.length; i++) {
-//         cells[i].textContent = "";
-//     }
-// };
-
-// HINTS
-// if else statements are your friend
-// cells[0].textContent
-// comparison operators
-// ===
-// if(conditionOne && conditionTwo || consitionThree);
