@@ -8,36 +8,41 @@ for (let i = 0; i < cells.length; i++) {
 
 let turn = "X"
 
-// populate cells and prevent cheating
+// document game play
 function cellClicked() {
+    if(results.textContent.length > 0) {
+        return;
+    }
+    
+    // prevent cheating
     if (event.target.textContent !== "") {
         return;
     } 
 
+    // populate cells
     event.target.textContent = turn;
 
-    // result = document.getElementById('#h3');
-
+    // announce results
     if (checkCombo(0, 1, 2)) {
-        results.textContent = "WINNER: " + turn
+        results.textContent = "WINNER: " + turn;
     } else if (checkCombo(3, 4, 5)) {
-        results.textContent = "WINNER: " + turn
+        results.textContent = "WINNER: " + turn;
     } else if (checkCombo(6, 7, 8)) {
-        results.textContent = "WINNER: " + turn
+        results.textContent = "WINNER: " + turn;
     } else if (checkCombo(0, 3, 6)) {
-        results.textContent = "WINNER: " + turn
+        results.textContent = "WINNER: " + turn;
     } else if (checkCombo(1, 4, 7)) {
-        results.textContent = "WINNER: " + turn
+        results.textContent = "WINNER: " + turn;
     } else if (checkCombo(2, 5, 8)) {
-        results.textContent = "WINNER: " + turn
+        results.textContent = "WINNER: " + turn;
     } else if (checkCombo(0, 4, 8)) {
-        results.textContent = "WINNER: " + turn
+        results.textContent = "WINNER: " + turn;
     } else if (checkCombo(2, 4, 6)) {
-        results.textContent = "WINNER: " + turn
+        results.textContent = "WINNER: " + turn;
     }
-    if (result.length > 0) {
-        return;
-    }
+    // if (results.length > 0) {
+    //     return;
+    // }
     togglePlayer();
 };
 
